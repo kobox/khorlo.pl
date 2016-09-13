@@ -136,7 +136,7 @@ INSTALLED_APPS = [
     'sekizai',
     'treebeard',
     'djangocms_text_ckeditor',
-    'djangocms_style',
+    #'djangocms_style',
     'djangocms_column',
     'djangocms_file',
     'djangocms_googlemap',
@@ -146,6 +146,7 @@ INSTALLED_APPS = [
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+    'aldryn_style',
     'khorlo'
 ]
 
