@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="medycyna naturalna, zioła, akupunktura, akupresura, masaże, Gabinet Medycyny Tybetańskiej w Trójmieście">
+<meta name="description" content="Gabinet Medycyny Naturalnej, lekarze z Mongolii, leczenie ziołami, akupunkturą i akupresurą, masaże lecznicze Gdynia, Gdańsk">
+<meta http-equiv="cache-control" content="public" />
+<meta name="google-site-verification" content="k7CydBLlONTTPPSO3wvF9ThXdPbl9Abmblkch0bfddE" />
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} {{ settings.SITE_TITLE }}{% endif %}</title>
+<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+
+{% compress css %}
+<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+<link rel="stylesheet" href="{% static "css/carousel.css" %}">
+
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/rtl.css" %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+{% endif %}
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+
+{% compress js %}
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/bootstrap-extras.js" %}"></script>
+{% block extra_js %}{% endblock %}
+{% endcompress %}
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+{% block extra_head %}{% endblock %}
+</head>
+<header>
+<div class="navbar " role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="{% static "img/logo.png" %}"/></a>
+        </div>
+        <div class="collapse navbar-collapse">
+           {% page_menu "pages/menus/primary.html" %}
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+</header>
+<body id="{% block body_id %}body{% endblock %}">
+<div id="fb-root"></div>
+
+
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="{% static "img/kolo.png" %}"alt="Wieloletnie Tradycja">
+          <h2>Wieloletnia Tradycja</h2>
+          <p>Khor lo - w dosłownym znaczeniu "koło" lub "okrąg", jest elementem wykorzystywanym w filozofii buddyjskiej symbolizujący Wspaniałe Koło Nauki Buddy. Według założeń medycyny tybetańskiej wpływ na zdrowie człowieka ma wiele czynników, takich jak: styl życia, dieta, klimat, pogoda, stan ducha. "</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle"src="{% static "img/exp.png" %}" alt="Doświadczenie">
+          <h2>Doświadczenie</h2>
+          <p>Gabinet Medycyny Tybetańskiej w Gdyni istnieje już 18 lat. Cieszymy się, że przez ten czas zaufało nam wiele osób, przez co mogliśmy pomóc wyzdrowieć tysiącom pacjentów. Specjalizujemy się w zabiegach akupunktury, masażach i ziołolecznictwie </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="{% static "img/spa.png" %}" alt="Zaangażowanie">
+          <h2>Zaangażowanie</h2>
+          <p>Primum non nocere - W swojej pracy do każdego pacjenta podchodzimy indywidualnie, z pełnym zaangażowaniem i  przede wszystkim z należytą troską o jego dobro. </p>
+      </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row">
+        <div class="col-md-9">
+          <h2 class="featurette-heading">O Gabinecie Medycyny Tybetańskiej <span class="text-muted">- w skrócie</span></h2>
+          <p class="">Witam<br/>
+Jestem lekarzem, spec. medycyny wschodniej i założycielką Gabinetu Medycyny Tybetańskiej w Gdyni.<br/>
+Praktykę lekarską prowadzę już od ok. 30 lat, początkowo w rodzimej Mongolii, gdzie ukończyłam Akademię Medyczną, jednak od 18 lat, prowadzę własny gabinet w Polsce.
+Zajmujemy się tutaj leczeniem szeregu różnych chorób, związanych z układem krążenia, oddechowym, pokarmowym, hormonalnym, nerwowym i innych. Specjalizujemy się w tradycyjnych metodach leczenia, jak ziołolecznictwo, akupunktura i masaże, które odpowiednio zastosowane, przynoszą bardzo dobre efekty, o czym świadczy ogólne zadowolenie naszych pacjentów.
+<br/>
+<p style="text-align: right">Serdecznie zapraszam<br/>Maamkhuu Urjinsuren</p></p>
+        </div>
+        <div class="col-md-3">
+          <img class="featurette-image img-circle" width="200px" height="200px" src="{% static "img/mu.png" %}" alt="Maamkhuu Urjinsuren">
+        </div>
+      </div>
+        <hr class="featurette-divider">
+<div class="row" >
+<h2 class="featurette-heading">Co mówią o nas, nasi pacjenci</h2>
+          <blockquote><p>Gorąco polecam, odpowiednie warunki, rzeczowe podejście, konkretnie, z informacją i można czuć się pewnie i spokojnie. Wszystko higienicznie i czysto, tak jak tylko to może być.
+          <br/>Norb</p></blockquote>
+</div>
+</div>
+{% include "includes/footer.html" %}
+{% include "includes/announcements.html" %}
+{% include "includes/footer_scripts.html" %}
+
+</body>
+</html>
